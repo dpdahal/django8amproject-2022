@@ -1,1 +1,2 @@
-# django8amproject-2022
+# Django Project 8 AM
+[]: # Author: [Django Project 8 AM](
