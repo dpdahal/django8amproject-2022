@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .models import *
 
 
 def index(request):
-    return render(request, 'pages/home/index.html')
+    data = {
+        'bannerData': Banner.objects.all(),
+    }
+    return render(request, 'pages/home/index.html', data)
 
 
 def contact(request):
