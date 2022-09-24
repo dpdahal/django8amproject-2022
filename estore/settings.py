@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ecommerce.apps.EcommerceConfig',
     'ckeditor',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,6 @@ MEDIA_URL = '/uploads/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "E-Store",
@@ -171,14 +171,13 @@ JAZZMIN_SETTINGS = {
     # Links to put along the top menu
     "topmenu_links": [
         # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
 
     ],
 
     # Whether to display the side menu
     "show_sidebar": True,
 }
-
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -187,3 +186,5 @@ CKEDITOR_CONFIGS = {
         'width': 580,
     },
 }
+
+CART_SESSION_ID = 'cart'

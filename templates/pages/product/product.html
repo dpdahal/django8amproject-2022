@@ -1,0 +1,48 @@
+{% extends "master/master.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Product List</h1>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            {% for product in productData %}
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt=""/>
+                                {% endif %}
+                                <h2>Rs: {{ product.price }}</h2>
+                                <p>{{ product.product_name }}n</p>
+                                <a href="#" class="btn btn-default add-to-cart"><i
+                                        class="fa fa-shopping-cart"></i>Add
+                                    to cart</a>
+                            </div>
+                            <div class="product-overlay">
+                                <div class="overlay-content">
+                                    <h2>{{ product.price }}</h2>
+                                    <p>{{ product.product_name }}</p>
+                                    <a href="{% url 'cart_add' product.id %}" class="btn btn-default add-to-cart"><i
+                                            class="fa fa-shopping-cart"></i>Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="choose">
+                            <ul class="nav nav-pills nav-justified">
+                                <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}
